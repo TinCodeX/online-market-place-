@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 #inorder the images imported to be rendered
+#from core.views import index, contact
 
 urlpatterns = [
     path('', include('core.urls')),  
