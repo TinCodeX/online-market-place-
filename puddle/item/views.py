@@ -19,14 +19,14 @@ def new_Item(request):
 
         if form.is_valid():
             item = form.save(commit=False)
-            item.cerated_by = request.user
+            item.created_by = request.user   
             item.save()
 
             return redirect('item:detail', pk=item.pk)
-    form = NewItemForm()
+    else:   
+        form = NewItemForm()
 
     return render(request, 'item/form.html', {
-        'title': 'New item',
         'form': form,
-
+        'title': 'New item',
     })
